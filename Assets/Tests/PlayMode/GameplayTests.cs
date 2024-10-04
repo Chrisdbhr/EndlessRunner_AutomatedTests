@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using NUnit.Framework;
 using Tests.Utils;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 using Object = UnityEngine.Object;
@@ -51,6 +54,7 @@ namespace Tests.PlayMode
             yield return MainGameSceneSetup();
             yield return WaitUntilGameStarts();
             var positionXLimit = _trackManager.laneOffset * -1f;
+            Assert.NotNull(_trackManager.characterController);
             var characterController = _trackManager.characterController;
             int presses = 5;
             do {
@@ -74,6 +78,9 @@ namespace Tests.PlayMode
             Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(FishCollectionGivingPoints)}");
             yield return MainGameSceneSetup();
             yield return WaitUntilGameStarts();
+            int safeSegmentOverride = 10;
+            Debug.Log($"Overriding safe segment value to {safeSegmentOverride}");
+            _trackManager.ReflectionSetFieldValue("m_SafeSegementLeft", safeSegmentOverride);
             var initialScore = _trackManager.score;
             Debug.Log("Spawning Fishes");
             int spawns = 5;
@@ -82,13 +89,62 @@ namespace Tests.PlayMode
                 spawns--;
             } while (spawns > 0);
             Debug.Log("Waiting for Player to collect a few fishes");
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             Assert.Greater(_trackManager.score, initialScore);
+        }
+
+        [UnityTest, Order(2)]
+        public IEnumerator HitSomethingAndDie()
+        {
+            Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(HitSomethingAndDie)}");
+            yield return MainGameSceneSetup();
+            yield return WaitUntilGameStarts();
+            Assert.NotNull(_trackManager.characterController);
+            Assert.NotNull(_trackManager.characterController.characterCollider);
+            Assert.NotNull(_trackManager.characterController.characterCollider.controller);
+            _trackManager.characterController.characterCollider.controller.currentLife = 1;
+            int safeSegmentOverride = 0;
+            Debug.Log($"Overriding safe segment value to {safeSegmentOverride}");
+            _trackManager.ReflectionSetFieldValue("m_SafeSegementLeft", safeSegmentOverride);
+
+            var overridedPossibleObstacleList = new List<AssetReference>();
+            var assetRef = GetFirstLowerObstacleFromTheme(_trackManager.currentTheme);
+            overridedPossibleObstacleList.Add(assetRef);
+            Assert.IsNotEmpty(overridedPossibleObstacleList);
+            _trackManager.currentSegment.possibleObstacles = overridedPossibleObstacleList.ToArray();
+
+            // Different from SpawnCoinAndPowerup method, this is not an IEnumerator so it's call cant be yield,
+            // game code change would need to be suggested to expose access to more precise testing.
+            _trackManager.SpawnObstacle(_trackManager.currentSegment);
+
+            yield return new WaitForSeconds(1f);
+            Assert.LessOrEqual(_trackManager.characterController.characterCollider.controller.currentLife, 0);
         }
 
         #endregion Tests
 
         #region General
+
+        AssetReference GetFirstLowerObstacleFromTheme(ThemeData themeData)
+        {
+            Assert.NotNull(themeData);
+            foreach (var zone in themeData.zones) {
+                foreach (var prefab in zone.prefabList) {
+                    if (prefab.editorAsset is not GameObject go) continue;
+                    if (!go.TryGetComponent(out TrackSegment trackSegment)) continue;
+                    foreach (var obstacleAssetRef in trackSegment.possibleObstacles) {
+                        var gameObject = obstacleAssetRef.editorAsset as GameObject;
+                        Assert.NotNull(gameObject);
+                        var lowerName = gameObject.name.ToLower();
+                        if (!lowerName.Contains("low")) continue;
+                        if (!gameObject.TryGetComponent(out AllLaneObstacle _)) continue;
+                        return obstacleAssetRef;
+                    }
+                }
+            }
+            Assert.Fail("No Lower obstacle found on theme: " + themeData.name);
+            return default;
+        }
 
         IEnumerator MainGameSceneSetup()
         {
