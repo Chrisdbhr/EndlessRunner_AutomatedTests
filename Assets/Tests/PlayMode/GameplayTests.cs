@@ -12,10 +12,16 @@ namespace Tests.PlayMode
 {
     public class GameplayTests
     {
+        #region Properties and Fields
+
         const string MainScene = "Assets/Scenes/Main.unity";
 
         LoadoutState _loadoutState;
         TrackManager _trackManager;
+
+        #endregion Properties and Fields
+
+        #region Setup and Teardown
 
         [SetUp]
         public void Setup()
@@ -26,6 +32,17 @@ namespace Tests.PlayMode
                 Assert.Inconclusive($"The path to '{nameof(MainScene)}' is incorrect.");
             }
         }
+
+        [TearDown]
+        public void TearDown()
+        {
+            Object.Destroy(_loadoutState);
+            Object.Destroy(_trackManager);
+        }
+
+        #endregion Setup and Teardown
+
+        #region Tests
 
         [UnityTest, Order(0), Timeout(10 * 1000)]
         public IEnumerator LeftClicksDontGoOffScreen()
@@ -38,7 +55,12 @@ namespace Tests.PlayMode
             int presses = 5;
             do {
                 Debug.Log($"Simulating press {presses}");
+
+                // Directly accessing the ChangeLane() since the current old input system that is implemented in the game
+                // does't support InputSimulation like the New Unity Input System does.
+                // Current code is checked that "ChangeLane" is only called by Input methods.
                 characterController.ChangeLane(-1);
+
                 yield return null;
                 yield return new WaitForSeconds(characterController.laneChangeSpeed * 0.01f);
                 presses--;
@@ -64,12 +86,9 @@ namespace Tests.PlayMode
             Assert.Greater(_trackManager.score, initialScore);
         }
 
-        [TearDown]
-        public void TearDown()
-        {
-            Object.Destroy(_loadoutState);
-            Object.Destroy(_trackManager);
-        }
+        #endregion Tests
+
+        #region General
 
         IEnumerator MainGameSceneSetup()
         {
@@ -97,6 +116,8 @@ namespace Tests.PlayMode
             Debug.Log("Skipping start animation");
             _trackManager.ReflectionSetFieldValue("m_TimeToStart", -1f);
         }
+
+        #endregion General
 
     }
 }
