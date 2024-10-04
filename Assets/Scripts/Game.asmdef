@@ -1,0 +1,7 @@
+﻿{
+  "name": "Game",
+  "references": [
+    "Unity.Addressables",
+    "Unity.ResourceManager"
+  ]
+}
