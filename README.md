@@ -1,5 +1,5 @@
 # Unity Automated Testing Project
-![Test Coverage](./CodeCoverage/Report/badge_combined.svg)
+![Test Coverage](./CodeCoverage/Report/badge_linecoverage.svg)
 
 This project was developed as part of a technical assignment to demonstrate automated testing in Unity, using the **Endless Runner Sample Game (Trash Dash)** as the basis.
 
