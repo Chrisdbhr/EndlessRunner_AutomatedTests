@@ -78,4 +78,6 @@ crashlytics-build.properties
 
 # Custom
 .idea
-CodeCoverage
+/CodeCoverage/*
+!/CodeCoverage/Report/
+!/CodeCoverage/Report/**
