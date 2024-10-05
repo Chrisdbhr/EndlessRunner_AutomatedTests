@@ -4,6 +4,7 @@ namespace Tests.Utils
 {
     public static class TestStrings
     {
+        public const string TestShaderName = "Particles/Standard Unlit";
         public const string TestStartLogPrefix = "<b><color=green>Starting Test: </color></b>";
     }
 }

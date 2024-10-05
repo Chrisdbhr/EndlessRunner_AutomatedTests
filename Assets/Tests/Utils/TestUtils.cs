@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Reflection;
 using NUnit.Framework;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Tests.Utils
 {
@@ -8,36 +11,64 @@ namespace Tests.Utils
     {
         const string ErrorGettingFieldFromReflection = "Exception getting field with reflection: ";
 
-        public static object ReflectionGetConstFieldValue(this object o, string fieldName)
+        public static object ReflectionGetConstFieldValue(this Type type, string fieldName)
         {
-            try {
-                return o.GetType().GetField(fieldName,BindingFlags.Static | BindingFlags.NonPublic).GetValue(o);
+            var field = type.GetField(fieldName, BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy);
+
+            if (field == null)
+            {
+                type = type.BaseType;
+                while (type != null)
+                {
+                    field = type.GetField(fieldName, BindingFlags.Static | BindingFlags.NonPublic);
+                    if (field != null)
+                    {
+                        break;
+                    }
+                    type = type.BaseType;
+                }
             }
-            catch (Exception e) {
-                Assert.Fail(ErrorGettingFieldFromReflection + e);
-            }
-            return default;
+
+            Assert.NotNull(field);
+            return field.GetRawConstantValue();
         }
+
+
 
         public static object ReflectionGetFieldValue(this object o, string fieldName)
         {
-            try {
-                return o.GetType().GetField(fieldName,BindingFlags.Instance | BindingFlags.NonPublic).GetValue(o);
-            }
-            catch (Exception e) {
-                Assert.Fail(ErrorGettingFieldFromReflection + e);
-            }
-            return default;
+            var field = o.GetType().GetField(fieldName,BindingFlags.Instance | BindingFlags.NonPublic);
+            Assert.NotNull(field, $"Field '{fieldName}' returned null from reflection");
+            return field.GetValue(o);
         }
 
         public static void ReflectionSetFieldValue(this object o, string fieldName, object value)
         {
-            try {
-                o.GetType().GetField(fieldName,BindingFlags.Instance | BindingFlags.NonPublic).SetValue(o, value);
-            }
-            catch (Exception e) {
-                Assert.Fail(ErrorGettingFieldFromReflection + e);
-            }
+            var field = o.GetType().GetField(fieldName,BindingFlags.Instance | BindingFlags.NonPublic);
+            Assert.NotNull(field, $"Field '{fieldName}' returned null from reflection");
+            field.SetValue(o, value);
         }
+
+        public static void SimulateButtonClick(Button button)
+        {
+            Assert.NotNull(button, "Button to simulate click is null");
+            button.onClick?.Invoke();
+        }
+
+        public static Material GetNewTestMaterial()
+        {
+            var material = new Material(Shader.Find(TestStrings.TestShaderName));
+            material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            material.SetInt("_ZWrite", 0);
+            material.SetInt("_Mode", 2);
+            material.DisableKeyword("_ALPHATEST_ON");
+            material.EnableKeyword("_ALPHABLEND_ON");
+            material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+            material.renderQueue = 3000;
+            material.color = new Color(1f, 0f, 0f, .6f);
+            return material;
+        }
+
     }
 }

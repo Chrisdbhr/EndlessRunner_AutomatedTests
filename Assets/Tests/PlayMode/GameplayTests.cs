@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Moq;
 using NUnit.Framework;
+using Tests.PlayMode.Mocks;
 using Tests.Utils;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 namespace Tests.PlayMode
@@ -121,6 +124,46 @@ namespace Tests.PlayMode
             Assert.LessOrEqual(_trackManager.characterController.characterCollider.controller.currentLife, 0);
         }
 
+        [UnityTest,Order(3)]
+        public IEnumerator ResetProcessWorkingAsExpected()
+        {
+            Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(ResetProcessWorkingAsExpected)}");
+            yield return MainGameSceneSetup();
+            yield return WaitUntilGameStarts();
+            Assert.NotNull(_trackManager.characterController);
+            Assert.NotNull(_trackManager.characterController.characterCollider);
+            Assert.NotNull(_trackManager.characterController.characterCollider.controller);
+            _trackManager.characterController.characterCollider.controller.currentLife = 0;
+            var mockObstacle = new GameObject("Mock obstacle").AddComponent<MockObstacle>();
+            yield return mockObstacle.Spawn(_trackManager.currentSegment,1f);
+
+            yield return new WaitForSeconds(3f);
+
+            // I am using 'FindObjectsOfType' more than one time because active and Instantiate objects keep changing every UI update.
+
+            Debug.Log("Looking for the GameOver button to click");
+            var gameOverButton = Object.FindObjectsOfType<Button>().FirstOrDefault(b => b.name == "GameOver");
+            Assert.NotNull(gameOverButton);
+            TestUtils.SimulateButtonClick(gameOverButton);
+
+            yield return new WaitForSeconds(.5f);
+
+            var closeButton = Object.FindObjectsOfType<Button>().FirstOrDefault(b => b.name == "CloseButton");
+            // If no mission completed, maybe the popup didnt show up so no assert if null.
+            if (closeButton != null) {
+                TestUtils.SimulateButtonClick(closeButton);
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(1f);
+
+            var runButton = Object.FindObjectsOfType<Button>().FirstOrDefault(b => b.name == "RunButton");
+            Assert.NotNull(runButton);
+            TestUtils.SimulateButtonClick(runButton);
+            yield return null;
+            Assert.Greater(_trackManager.characterController.characterCollider.controller.currentLife, 0);
+        }
+
         #endregion Tests
 
         #region General
@@ -164,7 +207,7 @@ namespace Tests.PlayMode
             yield return null;
             _trackManager = Object.FindFirstObjectByType<TrackManager>();
             Assert.NotNull(_trackManager);
-            var desiredSegmentCount = (int)_trackManager.ReflectionGetConstFieldValue("k_DesiredSegmentCount");
+            var desiredSegmentCount = (int)typeof(TrackManager).ReflectionGetConstFieldValue("k_DesiredSegmentCount");
             Assert.NotZero(desiredSegmentCount);
             var listOfSegments = _trackManager.ReflectionGetFieldValue("m_Segments") as IList;
             Debug.Log("Waiting for segments to spawn");
