@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using NUnit.Framework;
 using Tests.Utils;
@@ -42,6 +43,19 @@ namespace Tests.PlayMode
 
         #region General
 
+        protected void OverrideObstacleListWithOnlyLowerObstacles()
+        {
+            int safeSegmentOverride = 0;
+            Debug.Log($"Overriding safe segment value to {safeSegmentOverride}");
+            _trackManager.ReflectionSetFieldValue("m_SafeSegementLeft", safeSegmentOverride);
+
+            var overridedPossibleObstacleList = new List<AssetReference>();
+            var assetRef = GetFirstLowerObstacleFromTheme(_trackManager.currentTheme);
+            overridedPossibleObstacleList.Add(assetRef);
+            Assert.IsNotEmpty(overridedPossibleObstacleList);
+            _trackManager.currentSegment.possibleObstacles = overridedPossibleObstacleList.ToArray();
+        }
+
         protected AssetReference GetFirstLowerObstacleFromTheme(ThemeData themeData)
         {
             Assert.NotNull(themeData);
@@ -61,6 +75,16 @@ namespace Tests.PlayMode
             }
             Assert.Fail("No Lower obstacle found on theme: " + themeData.name);
             return default;
+        }
+
+        protected IEnumerator SpawnInPlayerPosition(string assetName)
+        {
+            Assert.NotNull(assetName);
+            var charTransform = _trackManager.characterController.transform;
+            var op = Addressables.InstantiateAsync(assetName, charTransform.position, charTransform.rotation, charTransform);
+            yield return op;
+            Assert.NotNull(op);
+            op.Result.transform.position = charTransform.position;
         }
 
         protected IEnumerator MainGameSceneSetup()

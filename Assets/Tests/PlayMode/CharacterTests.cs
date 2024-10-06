@@ -68,15 +68,8 @@ namespace Tests.PlayMode
             Assert.NotNull(_trackManager.characterController.characterCollider);
             Assert.NotNull(_trackManager.characterController.characterCollider.controller);
             _trackManager.characterController.characterCollider.controller.currentLife = 1;
-            int safeSegmentOverride = 0;
-            Debug.Log($"Overriding safe segment value to {safeSegmentOverride}");
-            _trackManager.ReflectionSetFieldValue("m_SafeSegementLeft", safeSegmentOverride);
 
-            var overridedPossibleObstacleList = new List<AssetReference>();
-            var assetRef = GetFirstLowerObstacleFromTheme(_trackManager.currentTheme);
-            overridedPossibleObstacleList.Add(assetRef);
-            Assert.IsNotEmpty(overridedPossibleObstacleList);
-            _trackManager.currentSegment.possibleObstacles = overridedPossibleObstacleList.ToArray();
+            OverrideObstacleListWithOnlyLowerObstacles();
 
             // Different from SpawnCoinAndPowerup method, this is not an IEnumerator so it's call cant be yield,
             // game code change would need to be suggested to expose access to more precise testing.
