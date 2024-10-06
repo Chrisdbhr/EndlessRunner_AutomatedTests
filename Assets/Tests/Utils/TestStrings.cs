@@ -6,5 +6,6 @@ namespace Tests.Utils
     {
         public const string TestShaderName = "Particles/Standard Unlit";
         public const string TestStartLogPrefix = "<b><color=green>Starting Test: </color></b>";
+        public const string MainScene = "Assets/Scenes/Main.unity";
     }
 }
