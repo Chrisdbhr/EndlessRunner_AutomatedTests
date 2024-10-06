@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using Moq;
 using NUnit.Framework;
 using Tests.PlayMode.Mocks;
 using Tests.Utils;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
@@ -56,12 +52,7 @@ namespace Tests.PlayMode
             Debug.Log($"Overriding safe segment value to {safeSegmentOverride}");
             _trackManager.ReflectionSetFieldValue("m_SafeSegementLeft", safeSegmentOverride);
             var initialScore = _trackManager.score;
-            Debug.Log("Spawning Fishes");
-            int spawns = 5;
-            do {
-                yield return _trackManager.SpawnCoinAndPowerup(_trackManager.currentSegment);
-                spawns--;
-            } while (spawns > 0);
+            yield return SpawnLotOfFishes(_trackManager.currentSegment);
             Debug.Log("Waiting for Player to collect a few fishes");
             yield return new WaitForSeconds(1f);
             Assert.Greater(_trackManager.score, initialScore);

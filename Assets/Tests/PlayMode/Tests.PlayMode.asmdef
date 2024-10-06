@@ -5,7 +5,8 @@
         "UnityEditor.TestRunner",
         "Game",
         "Test.Utils",
-        "Unity.Addressables"
+        "Unity.Addressables",
+        "Unity.ResourceManager"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

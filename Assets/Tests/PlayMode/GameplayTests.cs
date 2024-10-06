@@ -90,6 +90,23 @@ namespace Tests.PlayMode
             _trackManager.ReflectionSetFieldValue("m_TimeToStart", -1f);
         }
 
+        protected IEnumerator SpawnLotOfFishes(TrackSegment segment)
+        {
+            Assert.NotNull(segment);
+            _trackManager.ReflectionSetFieldValue("m_TimeSincePowerup", -9999f);
+            _trackManager.ReflectionSetFieldValue("m_TimeSinceLastPremium", -9999f);
+            int maxLoopTimes = 30;
+            Debug.Log($"Spawning a lot of fishes on segment: {segment.name}", segment);
+            Coin[] coins;
+            do {
+                if (maxLoopTimes <= 0) break;
+                yield return _trackManager.SpawnCoinAndPowerup(segment);
+                maxLoopTimes--;
+                coins = segment.GetComponentsInChildren<Coin>();
+            } while (coins == null || coins.Length < 40);
+            if(maxLoopTimes <= 0) Debug.Log($"Spawned fishes used the {nameof(maxLoopTimes)} limit.", segment);
+        }
+
         #endregion General
     }
 }
