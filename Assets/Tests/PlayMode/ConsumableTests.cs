@@ -26,7 +26,7 @@ namespace Tests.PlayMode
             overrideConsumableDb.consumbales = new Consumable[] { coinMagnet };
             overrideConsumableDb.Load();
             _trackManager.consumableDatabase = overrideConsumableDb;
-            yield return SpawnInPlayerPosition(coinMagnet.name);
+            yield return SpawnInFrontOfPlayer(coinMagnet.name);
             yield return SpawnLotOfFishes(_trackManager.currentSegment);
             int oldScore = _trackManager.score;
             Debug.Log($"Old score is {oldScore}");
@@ -44,7 +44,7 @@ namespace Tests.PlayMode
             var extraLife = _trackManager.consumableDatabase.consumbales.FirstOrDefault(c => c is ExtraLife) as ExtraLife;
             Assert.NotNull(extraLife);
             _trackManager.characterController.currentLife = 2;
-            yield return SpawnInPlayerPosition(extraLife.name);
+            yield return SpawnInFrontOfPlayer(extraLife.name);
             Assert.GreaterOrEqual(3, _trackManager.characterController.currentLife);
         }
 
@@ -56,7 +56,7 @@ namespace Tests.PlayMode
             yield return WaitUntilGameStarts();
             var invincibility = _trackManager.consumableDatabase.consumbales.FirstOrDefault(c => c is Invincibility) as Invincibility;
             Assert.NotNull(invincibility);
-            yield return SpawnInPlayerPosition(invincibility.name);
+            yield return SpawnInFrontOfPlayer(invincibility.name);
             int initialLife = _trackManager.characterController.currentLife;
             var mockObstacle = new GameObject("Mock obstacle").AddComponent<MockObstacle>();
             OverrideObstacleListWithOnlyLowerObstacles();

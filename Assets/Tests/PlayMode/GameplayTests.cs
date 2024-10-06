@@ -77,14 +77,25 @@ namespace Tests.PlayMode
             return default;
         }
 
-        protected IEnumerator SpawnInPlayerPosition(string assetName)
+        protected IEnumerator SpawnInFrontOfPlayer(string assetName)
         {
             Assert.NotNull(assetName);
+            Debug.Log($"Asset name to spawn: {assetName}");
             var charTransform = _trackManager.characterController.transform;
-            var op = Addressables.InstantiateAsync(assetName, charTransform.position, charTransform.rotation, charTransform);
-            yield return op;
-            Assert.NotNull(op);
-            op.Result.transform.position = charTransform.position;
+            Assert.NotNull(charTransform);
+            var op = Addressables.InstantiateAsync(assetName, charTransform.position + Vector3.forward, Quaternion.identity);
+            op.Completed += handle => {
+                Assert.NotNull(handle);
+                Assert.NotNull(handle.Result);
+                if (handle.Result.TryGetComponent(out Consumable consumable)) {
+                    Debug.Log($"Disabling ActivatedParticleReference because of bug when spawning it");
+                    consumable.ActivatedParticleReference = default;
+                }
+                handle.Result.transform.position = charTransform.position;
+            };
+            while (!op.IsDone) {
+                yield return null;
+            }
         }
 
         protected IEnumerator MainGameSceneSetup()
