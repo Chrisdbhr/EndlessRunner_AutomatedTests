@@ -1,47 +1,47 @@
 ﻿# Summary
 |||
 |:---|:---|
-| Generated on: | 06/10/2024 - 12:26:21 |
-| Parser: | MultiReportParser (6x OpenCoverParser) |
+| Generated on: | 06/10/2024 - 16:19:23 |
+| Parser: | MultiReportParser (8x OpenCoverParser) |
 | Assemblies: | 1 |
 | Classes: | 65 |
 | Files: | 54 |
-| Covered lines: | 1578 |
-| Uncovered lines: | 1616 |
+| Covered lines: | 1636 |
+| Uncovered lines: | 1558 |
 | Coverable lines: | 3194 |
 | Total lines: | 6228 |
-| Line coverage: | 49.4% (1578 of 3194) |
+| Line coverage: | 51.2% (1636 of 3194) |
 | Covered branches: | 0 |
 | Total branches: | 0 |
-| Covered methods: | 186 |
+| Covered methods: | 193 |
 | Total methods: | 378 |
-| Method coverage: | 49.2% (186 of 378) |
+| Method coverage: | 51% (193 of 378) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|**Covered**|**Total**|**Method coverage**|
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-|**Game**|**1578**|**1616**|**3194**|**9123**|**49.4%**|**0**|**0**|****|**186**|**378**|**49.2%**|
+|**Game**|**1636**|**1558**|**3194**|**9123**|**51.2%**|**0**|**0**|****|**193**|**378**|**51%**|
 |AdsForMission|7|9|16|114|43.7%|0|0||2|4|50%|
 |AllLaneObstacle|11|3|14|29|78.5%|0|0||1|1|100%|
 |AssignOutputChannel|13|7|20|39|65%|0|0||1|1|100%|
 |BarrierJumpMission|0|38|38|287|0%|0|0||0|6|0%|
 |Character|6|0|6|33|100%|0|0||1|1|100%|
-|CharacterCollider|70|57|127|227|55.1%|0|0||7|15|46.6%|
+|CharacterCollider|94|33|127|227|74%|0|0||10|15|66.6%|
 |CharacterDatabase|21|1|22|45|95.4%|0|0||3|4|75%|
-|CharacterInputController|101|125|226|427|44.6%|0|0||22|30|73.3%|
+|CharacterInputController|104|122|226|427|46%|0|0||22|30|73.3%|
 |Coin|1|0|1|7|100%|0|0||1|1|100%|
 |CoinMagnet|18|9|27|48|66.6%|0|0||3|6|50%|
-|Consumable|25|31|56|115|44.6%|0|0||5|9|55.5%|
+|Consumable|28|28|56|115|50%|0|0||6|9|66.6%|
 |ConsumableDatabase|10|3|13|33|76.9%|0|0||1|2|50%|
 |CoroutineHandler|12|4|16|36|75%|0|0||2|3|66.6%|
 |CountdownSound|9|1|10|24|90%|0|0||2|2|100%|
 |DataDeleteConfirmation|0|16|16|30|0%|0|0||0|4|0%|
-|ExtraLife|3|20|23|46|13%|0|0||1|6|16.6%|
+|ExtraLife|8|15|23|46|34.7%|0|0||2|6|33.3%|
 |GameManager|42|26|68|143|61.7%|0|0||6|10|60%|
 |GameOverState|40|18|58|164|68.9%|0|0||7|10|70%|
-|GameState|157|166|323|602|48.6%|0|0||11|23|47.8%|
+|GameState|168|155|323|602|52%|0|0||11|23|47.8%|
 |Helpers|7|0|7|16|100%|0|0||1|1|100%|
 |HighscoreEntry|3|0|3|499|100%|0|0||1|1|100%|
-|Invincibility|3|21|24|45|12.5%|0|0||1|7|14.2%|
+|Invincibility|11|13|24|45|45.8%|0|0||3|7|42.8%|
 |Leaderboard|41|9|50|85|82%|0|0||2|4|50%|
 |LevelLoader|0|3|3|10|0%|0|0||0|1|0%|
 |LicenceDisplayer|0|18|18|32|0%|0|0||0|4|0%|
@@ -81,7 +81,7 @@
 |StartButton|0|8|8|30|0%|0|0||0|1|0%|
 |ThemeData|3|0|3|37|100%|0|0||1|1|100%|
 |ThemeDatabase|21|1|22|45|95.4%|0|0||3|4|75%|
-|TrackManager|303|100|403|677|75.1%|0|0||30|39|76.9%|
+|TrackManager|307|96|403|677|76.1%|0|0||30|39|76.9%|
 |TrackSegment|57|10|67|165|85%|0|0||6|7|85.7%|
 |TrackSegmentEditor|0|24|24|165|0%|0|0||0|2|0%|
 |WorldCurver|7|0|7|20|100%|0|0||3|3|100%|
