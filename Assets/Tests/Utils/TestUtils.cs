@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Runtime.Serialization;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -68,6 +69,12 @@ namespace Tests.Utils
             material.renderQueue = 3000;
             material.color = new Color(1f, 0f, 0f, .6f);
             return material;
+        }
+
+        public static class TestableObjectFactory {
+            public static T Create<T>() {
+                return (T)FormatterServices.GetUninitializedObject(typeof(T));
+            }
         }
 
     }
