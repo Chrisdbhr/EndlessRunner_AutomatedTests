@@ -1,25 +1,25 @@
 ﻿# Summary
 |||
 |:---|:---|
-| Generated on: | 06/10/2024 - 16:19:23 |
-| Parser: | MultiReportParser (8x OpenCoverParser) |
+| Generated on: | 06/10/2024 - 22:29:08 |
+| Parser: | MultiReportParser (9x OpenCoverParser) |
 | Assemblies: | 1 |
 | Classes: | 65 |
 | Files: | 54 |
-| Covered lines: | 1636 |
-| Uncovered lines: | 1558 |
+| Covered lines: | 1667 |
+| Uncovered lines: | 1527 |
 | Coverable lines: | 3194 |
 | Total lines: | 6228 |
-| Line coverage: | 51.2% (1636 of 3194) |
+| Line coverage: | 52.1% (1667 of 3194) |
 | Covered branches: | 0 |
 | Total branches: | 0 |
-| Covered methods: | 193 |
+| Covered methods: | 200 |
 | Total methods: | 378 |
-| Method coverage: | 51% (193 of 378) |
+| Method coverage: | 52.9% (200 of 378) |
 
 |**Name**|**Covered**|**Uncovered**|**Coverable**|**Total**|**Line coverage**|**Covered**|**Total**|**Branch coverage**|**Covered**|**Total**|**Method coverage**|
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-|**Game**|**1636**|**1558**|**3194**|**9123**|**51.2%**|**0**|**0**|****|**193**|**378**|**51%**|
+|**Game**|**1667**|**1527**|**3194**|**9123**|**52.1%**|**0**|**0**|****|**200**|**378**|**52.9%**|
 |AdsForMission|7|9|16|114|43.7%|0|0||2|4|50%|
 |AllLaneObstacle|11|3|14|29|78.5%|0|0||1|1|100%|
 |AssignOutputChannel|13|7|20|39|65%|0|0||1|1|100%|
@@ -36,13 +36,13 @@
 |CountdownSound|9|1|10|24|90%|0|0||2|2|100%|
 |DataDeleteConfirmation|0|16|16|30|0%|0|0||0|4|0%|
 |ExtraLife|8|15|23|46|34.7%|0|0||2|6|33.3%|
-|GameManager|42|26|68|143|61.7%|0|0||6|10|60%|
+|GameManager|44|24|68|143|64.7%|0|0||8|10|80%|
 |GameOverState|40|18|58|164|68.9%|0|0||7|10|70%|
-|GameState|168|155|323|602|52%|0|0||11|23|47.8%|
+|GameState|186|137|323|602|57.5%|0|0||13|23|56.5%|
 |Helpers|7|0|7|16|100%|0|0||1|1|100%|
 |HighscoreEntry|3|0|3|499|100%|0|0||1|1|100%|
 |Invincibility|11|13|24|45|45.8%|0|0||3|7|42.8%|
-|Leaderboard|41|9|50|85|82%|0|0||2|4|50%|
+|Leaderboard|37|13|50|85|74%|0|0||2|4|50%|
 |LevelLoader|0|3|3|10|0%|0|0||0|1|0%|
 |LicenceDisplayer|0|18|18|32|0%|0|0||0|4|0%|
 |LimitedLengthRun|0|16|16|99|0%|0|0||0|4|0%|
@@ -65,7 +65,7 @@
 |PowerupIcon|6|0|6|21|100%|0|0||2|2|100%|
 |RandomAnimation|3|0|3|12|100%|0|0||1|1|100%|
 |RestartRunning|4|2|6|16|66.6%|0|0||1|2|50%|
-|Score2Multiplier|3|21|24|47|12.5%|0|0||1|7|14.2%|
+|Score2Multiplier|11|13|24|47|45.8%|0|0||3|7|42.8%|
 |SeededRun|0|11|11|99|0%|0|0||0|3|0%|
 |SettingPopup|0|34|34|74|0%|0|0||0|7|0%|
 |ShopAccessoriesList|0|117|117|214|0%|0|0||0|6|0%|
@@ -81,7 +81,7 @@
 |StartButton|0|8|8|30|0%|0|0||0|1|0%|
 |ThemeData|3|0|3|37|100%|0|0||1|1|100%|
 |ThemeDatabase|21|1|22|45|95.4%|0|0||3|4|75%|
-|TrackManager|307|96|403|677|76.1%|0|0||30|39|76.9%|
+|TrackManager|314|89|403|677|77.9%|0|0||31|39|79.4%|
 |TrackSegment|57|10|67|165|85%|0|0||6|7|85.7%|
 |TrackSegmentEditor|0|24|24|165|0%|0|0||0|2|0%|
 |WorldCurver|7|0|7|20|100%|0|0||3|3|100%|

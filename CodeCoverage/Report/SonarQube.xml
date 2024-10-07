@@ -775,8 +775,8 @@
     <lineToCover lineNumber="45" covered="true" />
   </file>
   <file path="P:/Tests/EndlessRunner_AutomatedTests/Assets/Scripts/GameManager/GameManager.cs">
-    <lineToCover lineNumber="12" covered="false" />
-    <lineToCover lineNumber="16" covered="false" />
+    <lineToCover lineNumber="12" covered="true" />
+    <lineToCover lineNumber="16" covered="true" />
     <lineToCover lineNumber="20" covered="true" />
     <lineToCover lineNumber="21" covered="true" />
     <lineToCover lineNumber="24" covered="true" />
@@ -1054,28 +1054,28 @@
     <lineToCover lineNumber="288" covered="false" />
     <lineToCover lineNumber="289" covered="false" />
     <lineToCover lineNumber="290" covered="false" />
-    <lineToCover lineNumber="293" covered="false" />
-    <lineToCover lineNumber="295" covered="false" />
+    <lineToCover lineNumber="293" covered="true" />
+    <lineToCover lineNumber="295" covered="true" />
     <lineToCover lineNumber="296" covered="false" />
-    <lineToCover lineNumber="298" covered="false" />
-    <lineToCover lineNumber="299" covered="false" />
-    <lineToCover lineNumber="301" covered="false" />
-    <lineToCover lineNumber="302" covered="false" />
-    <lineToCover lineNumber="303" covered="false" />
-    <lineToCover lineNumber="304" covered="false" />
-    <lineToCover lineNumber="305" covered="false" />
-    <lineToCover lineNumber="306" covered="false" />
-    <lineToCover lineNumber="309" covered="false" />
-    <lineToCover lineNumber="310" covered="false" />
-    <lineToCover lineNumber="311" covered="false" />
-    <lineToCover lineNumber="312" covered="false" />
-    <lineToCover lineNumber="313" covered="false" />
-    <lineToCover lineNumber="314" covered="false" />
+    <lineToCover lineNumber="298" covered="true" />
+    <lineToCover lineNumber="299" covered="true" />
+    <lineToCover lineNumber="301" covered="true" />
+    <lineToCover lineNumber="302" covered="true" />
+    <lineToCover lineNumber="303" covered="true" />
+    <lineToCover lineNumber="304" covered="true" />
+    <lineToCover lineNumber="305" covered="true" />
+    <lineToCover lineNumber="306" covered="true" />
+    <lineToCover lineNumber="309" covered="true" />
+    <lineToCover lineNumber="310" covered="true" />
+    <lineToCover lineNumber="311" covered="true" />
+    <lineToCover lineNumber="312" covered="true" />
+    <lineToCover lineNumber="313" covered="true" />
+    <lineToCover lineNumber="314" covered="true" />
     <lineToCover lineNumber="315" covered="false" />
     <lineToCover lineNumber="316" covered="false" />
     <lineToCover lineNumber="317" covered="false" />
-    <lineToCover lineNumber="319" covered="false" />
-    <lineToCover lineNumber="320" covered="false" />
+    <lineToCover lineNumber="319" covered="true" />
+    <lineToCover lineNumber="320" covered="true" />
     <lineToCover lineNumber="323" covered="false" />
     <lineToCover lineNumber="325" covered="false" />
     <lineToCover lineNumber="326" covered="false" />
@@ -1586,10 +1586,10 @@
     <lineToCover lineNumber="42" covered="true" />
     <lineToCover lineNumber="43" covered="true" />
     <lineToCover lineNumber="45" covered="true" />
-    <lineToCover lineNumber="46" covered="true" />
-    <lineToCover lineNumber="47" covered="true" />
-    <lineToCover lineNumber="48" covered="true" />
-    <lineToCover lineNumber="49" covered="true" />
+    <lineToCover lineNumber="46" covered="false" />
+    <lineToCover lineNumber="47" covered="false" />
+    <lineToCover lineNumber="48" covered="false" />
+    <lineToCover lineNumber="49" covered="false" />
     <lineToCover lineNumber="51" covered="true" />
     <lineToCover lineNumber="52" covered="false" />
     <lineToCover lineNumber="54" covered="true" />
@@ -2278,18 +2278,18 @@
     <lineToCover lineNumber="23" covered="false" />
     <lineToCover lineNumber="24" covered="false" />
     <lineToCover lineNumber="25" covered="false" />
-    <lineToCover lineNumber="28" covered="false" />
-    <lineToCover lineNumber="29" covered="false" />
-    <lineToCover lineNumber="31" covered="false" />
-    <lineToCover lineNumber="33" covered="false" />
-    <lineToCover lineNumber="34" covered="false" />
+    <lineToCover lineNumber="28" covered="true" />
+    <lineToCover lineNumber="29" covered="true" />
+    <lineToCover lineNumber="31" covered="true" />
+    <lineToCover lineNumber="33" covered="true" />
+    <lineToCover lineNumber="34" covered="true" />
     <lineToCover lineNumber="37" covered="false" />
     <lineToCover lineNumber="38" covered="false" />
     <lineToCover lineNumber="40" covered="false" />
     <lineToCover lineNumber="41" covered="false" />
-    <lineToCover lineNumber="44" covered="false" />
-    <lineToCover lineNumber="45" covered="false" />
-    <lineToCover lineNumber="46" covered="false" />
+    <lineToCover lineNumber="44" covered="true" />
+    <lineToCover lineNumber="45" covered="true" />
+    <lineToCover lineNumber="46" covered="true" />
   </file>
   <file path="P:/Tests/EndlessRunner_AutomatedTests/Assets/Scripts/UI/Settings/SettingPopup.cs">
     <lineToCover lineNumber="26" covered="false" />
@@ -2816,7 +2816,7 @@
     <lineToCover lineNumber="76" covered="true" />
     <lineToCover lineNumber="77" covered="false" />
     <lineToCover lineNumber="78" covered="true" />
-    <lineToCover lineNumber="80" covered="false" />
+    <lineToCover lineNumber="80" covered="true" />
     <lineToCover lineNumber="81" covered="true" />
     <lineToCover lineNumber="83" covered="true" />
     <lineToCover lineNumber="84" covered="true" />
@@ -3036,12 +3036,12 @@
     <lineToCover lineNumber="442" covered="true" />
     <lineToCover lineNumber="444" covered="true" />
     <lineToCover lineNumber="446" covered="true" />
-    <lineToCover lineNumber="447" covered="false" />
-    <lineToCover lineNumber="448" covered="false" />
-    <lineToCover lineNumber="449" covered="false" />
-    <lineToCover lineNumber="450" covered="false" />
-    <lineToCover lineNumber="451" covered="false" />
-    <lineToCover lineNumber="452" covered="false" />
+    <lineToCover lineNumber="447" covered="true" />
+    <lineToCover lineNumber="448" covered="true" />
+    <lineToCover lineNumber="449" covered="true" />
+    <lineToCover lineNumber="450" covered="true" />
+    <lineToCover lineNumber="451" covered="true" />
+    <lineToCover lineNumber="452" covered="true" />
     <lineToCover lineNumber="454" covered="true" />
     <lineToCover lineNumber="455" covered="true" />
     <lineToCover lineNumber="457" covered="true" />

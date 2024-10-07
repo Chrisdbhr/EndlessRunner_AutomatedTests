@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>06/10/2024 - 16:19:23</Generatedon>
-    <Parser>MultiReportParser (8x OpenCoverParser)</Parser>
+    <Generatedon>06/10/2024 - 22:29:09</Generatedon>
+    <Parser>MultiReportParser (9x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
     <Classes>65</Classes>
     <Files>54</Files>
-    <Coveredlines>1636</Coveredlines>
-    <Uncoveredlines>1558</Uncoveredlines>
+    <Coveredlines>1667</Coveredlines>
+    <Uncoveredlines>1527</Uncoveredlines>
     <Coverablelines>3194</Coverablelines>
     <Totallines>6228</Totallines>
-    <Linecoverage>51.2</Linecoverage>
+    <Linecoverage>52.1</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
-    <Coveredmethods>193</Coveredmethods>
+    <Coveredmethods>200</Coveredmethods>
     <Totalmethods>378</Totalmethods>
-    <Methodcoverage>51</Methodcoverage>
+    <Methodcoverage>52.9</Methodcoverage>
   </Summary>
   <Coverage>
-    <Assembly name="Game" classes="65" coverage="51.2" coveredlines="1636" coverablelines="3194" totallines="9123" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="193" totalmethods="378" methodcoverage="51">
+    <Assembly name="Game" classes="65" coverage="52.1" coveredlines="1667" coverablelines="3194" totallines="9123" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="200" totalmethods="378" methodcoverage="52.9">
       <Class name="AdsForMission" coverage="43.7" coveredlines="7" coverablelines="16" totallines="114" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="4" methodcoverage="50" />
       <Class name="AllLaneObstacle" coverage="78.5" coveredlines="11" coverablelines="14" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
       <Class name="AssignOutputChannel" coverage="65" coveredlines="13" coverablelines="20" totallines="39" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
@@ -35,13 +35,13 @@
       <Class name="CountdownSound" coverage="90" coveredlines="9" coverablelines="10" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
       <Class name="DataDeleteConfirmation" coverage="0" coveredlines="0" coverablelines="16" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
       <Class name="ExtraLife" coverage="34.7" coveredlines="8" coverablelines="23" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="6" methodcoverage="33.3" />
-      <Class name="GameManager" coverage="61.7" coveredlines="42" coverablelines="68" totallines="143" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="6" totalmethods="10" methodcoverage="60" />
+      <Class name="GameManager" coverage="64.7" coveredlines="44" coverablelines="68" totallines="143" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="8" totalmethods="10" methodcoverage="80" />
       <Class name="GameOverState" coverage="68.9" coveredlines="40" coverablelines="58" totallines="164" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="7" totalmethods="10" methodcoverage="70" />
-      <Class name="GameState" coverage="52" coveredlines="168" coverablelines="323" totallines="602" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="11" totalmethods="23" methodcoverage="47.8" />
+      <Class name="GameState" coverage="57.5" coveredlines="186" coverablelines="323" totallines="602" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="13" totalmethods="23" methodcoverage="56.5" />
       <Class name="Helpers" coverage="100" coveredlines="7" coverablelines="7" totallines="16" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
       <Class name="HighscoreEntry" coverage="100" coveredlines="3" coverablelines="3" totallines="499" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
       <Class name="Invincibility" coverage="45.8" coveredlines="11" coverablelines="24" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="7" methodcoverage="42.8" />
-      <Class name="Leaderboard" coverage="82" coveredlines="41" coverablelines="50" totallines="85" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="4" methodcoverage="50" />
+      <Class name="Leaderboard" coverage="74" coveredlines="37" coverablelines="50" totallines="85" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="4" methodcoverage="50" />
       <Class name="LevelLoader" coverage="0" coveredlines="0" coverablelines="3" totallines="10" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
       <Class name="LicenceDisplayer" coverage="0" coveredlines="0" coverablelines="18" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
       <Class name="LimitedLengthRun" coverage="0" coveredlines="0" coverablelines="16" totallines="99" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
@@ -64,7 +64,7 @@
       <Class name="PowerupIcon" coverage="100" coveredlines="6" coverablelines="6" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
       <Class name="RandomAnimation" coverage="100" coveredlines="3" coverablelines="3" totallines="12" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
       <Class name="RestartRunning" coverage="66.6" coveredlines="4" coverablelines="6" totallines="16" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="2" methodcoverage="50" />
-      <Class name="Score2Multiplier" coverage="12.5" coveredlines="3" coverablelines="24" totallines="47" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="7" methodcoverage="14.2" />
+      <Class name="Score2Multiplier" coverage="45.8" coveredlines="11" coverablelines="24" totallines="47" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="7" methodcoverage="42.8" />
       <Class name="SeededRun" coverage="0" coveredlines="0" coverablelines="11" totallines="99" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
       <Class name="SettingPopup" coverage="0" coveredlines="0" coverablelines="34" totallines="74" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
       <Class name="ShopAccessoriesList" coverage="0" coveredlines="0" coverablelines="117" totallines="214" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
@@ -80,7 +80,7 @@
       <Class name="StartButton" coverage="0" coveredlines="0" coverablelines="8" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
       <Class name="ThemeData" coverage="100" coveredlines="3" coverablelines="3" totallines="37" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
       <Class name="ThemeDatabase" coverage="95.4" coveredlines="21" coverablelines="22" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="4" methodcoverage="75" />
-      <Class name="TrackManager" coverage="76.1" coveredlines="307" coverablelines="403" totallines="677" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="30" totalmethods="39" methodcoverage="76.9" />
+      <Class name="TrackManager" coverage="77.9" coveredlines="314" coverablelines="403" totallines="677" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="31" totalmethods="39" methodcoverage="79.4" />
       <Class name="TrackSegment" coverage="85" coveredlines="57" coverablelines="67" totallines="165" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="6" totalmethods="7" methodcoverage="85.7" />
       <Class name="TrackSegmentEditor" coverage="0" coveredlines="0" coverablelines="24" totallines="165" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
       <Class name="WorldCurver" coverage="100" coveredlines="7" coverablelines="7" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
