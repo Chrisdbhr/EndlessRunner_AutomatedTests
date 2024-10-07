@@ -9,7 +9,7 @@ using UnityEngine.TestTools;
 
 namespace Tests.PlayMode
 {
-    public class ConsumableTests : GameplayTests
+    public class ConsumableTests : MainSceneTests
     {
 
         [UnityTest]

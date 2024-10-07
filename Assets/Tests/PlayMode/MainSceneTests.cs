@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 namespace Tests.PlayMode
 {
-    public class GameplayTests : PlayModeTest
+    public class MainSceneTests : PlayModeTests
     {
         #region Properties and Fields
 

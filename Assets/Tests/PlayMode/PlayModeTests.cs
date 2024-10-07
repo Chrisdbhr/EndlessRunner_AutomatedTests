@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Tests.PlayMode
 {
-    public abstract class PlayModeTest
+    public abstract class PlayModeTests
     {
         protected TestHelperGameObject TestHelperGameObject;
 

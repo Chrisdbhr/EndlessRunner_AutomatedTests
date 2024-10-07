@@ -12,7 +12,7 @@ using Object = UnityEngine.Object;
 
 namespace Tests.PlayMode
 {
-    public class CharacterTests : GameplayTests
+    public class CharacterTests : MainSceneTests
     {
 
         #region Tests
