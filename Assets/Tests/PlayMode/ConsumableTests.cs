@@ -70,5 +70,35 @@ namespace Tests.PlayMode
             Assert.AreEqual(initialLife,_trackManager.characterController.currentLife);
         }
 
+        [UnityTest]
+        public IEnumerator TestScore2Multiplier()
+        {
+            Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(TestScore2Multiplier)}");
+            yield return MainGameSceneSetup();
+            yield return WaitUntilGameStarts();
+            var score2Multiplier = _trackManager.consumableDatabase.consumbales.FirstOrDefault(c => c is Score2Multiplier) as Score2Multiplier;
+            Assert.NotNull(score2Multiplier);
+            TestHelperGameObject.SupressApplicationPausePrevention = true;
+            Assert.NotNull(GameManager.instance);
+            var gameState = GameManager.instance.topState as GameState;
+            Assert.NotNull(gameState);
+            gameState.Pause();
+            foreach (var coinInWorld in Object.FindObjectsOfType<Coin>()) {
+                Object.Destroy(coinInWorld.gameObject);
+            }
+            yield return this.SpawnInFrontOfPlayer(score2Multiplier.name);
+            var charController = _trackManager.characterController;
+            Assert.NotNull(charController);
+            var coinFromPool = Coin.coinPool.Get(charController.transform.position + Vector3.forward * 2f,Quaternion.identity);
+            Assert.NotNull(coinFromPool);
+            gameState.Resume();
+            TestHelperGameObject.SupressApplicationPausePrevention = true;
+            int oldScore = _trackManager.score;
+            Debug.Log($"Old score is {oldScore}");
+            yield return new WaitForSeconds(1f);
+            Debug.Log($"New score is {_trackManager.score}");
+            Assert.GreaterOrEqual(_trackManager.score, 18);
+        }
+
     }
 }

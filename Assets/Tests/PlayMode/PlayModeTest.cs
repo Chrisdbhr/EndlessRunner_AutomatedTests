@@ -6,14 +6,14 @@ namespace Tests.PlayMode
 {
     public abstract class PlayModeTest
     {
-        protected GameObject TestHelperGameObject;
+        protected TestHelperGameObject TestHelperGameObject;
 
         #region Setup and Teardown
 
         [SetUp]
         public virtual void Setup()
         {
-            TestHelperGameObject = new GameObject(nameof(TestHelperGameObject), typeof(TestHelperGameObject));
+            TestHelperGameObject = new GameObject(nameof(TestHelperGameObject)).AddComponent<TestHelperGameObject>();
         }
 
         [TearDown]
