@@ -8,6 +8,7 @@ namespace Tests.EditMode
         [Test]
         public void ExtraLifeDefaultValues()
         {
+            TestUtils.LogStartTestInformation(nameof(ExtraLifeDefaultValues));
             var consumable = TestUtils.TestableObjectFactory.Create<ExtraLife>();
             Assert.AreEqual("Life", consumable.GetConsumableName());
             Assert.AreEqual(Consumable.ConsumableType.EXTRALIFE, consumable.GetConsumableType());
@@ -18,6 +19,7 @@ namespace Tests.EditMode
         [Test]
         public void CoinMagnetDefaultValues()
         {
+            TestUtils.LogStartTestInformation(nameof(CoinMagnetDefaultValues));
             var consumable = TestUtils.TestableObjectFactory.Create<CoinMagnet>();
             Assert.AreEqual("Magnet", consumable.GetConsumableName());
             Assert.AreEqual(Consumable.ConsumableType.COIN_MAG, consumable.GetConsumableType());
@@ -28,6 +30,7 @@ namespace Tests.EditMode
         [Test]
         public void InvincibilityDefaultValues()
         {
+            TestUtils.LogStartTestInformation(nameof(InvincibilityDefaultValues));
             var consumable = TestUtils.TestableObjectFactory.Create<Invincibility>();
             Assert.AreEqual("Invincible", consumable.GetConsumableName());
             Assert.AreEqual(Consumable.ConsumableType.INVINCIBILITY, consumable.GetConsumableType());
@@ -38,6 +41,7 @@ namespace Tests.EditMode
         [Test]
         public void Score2MultiplierDefaultValues()
         {
+            TestUtils.LogStartTestInformation(nameof(Score2MultiplierDefaultValues));
             var consumable = TestUtils.TestableObjectFactory.Create<Score2Multiplier>();
             Assert.AreEqual("x2", consumable.GetConsumableName());
             Assert.AreEqual(Consumable.ConsumableType.SCORE_MULTIPLAYER, consumable.GetConsumableType());
