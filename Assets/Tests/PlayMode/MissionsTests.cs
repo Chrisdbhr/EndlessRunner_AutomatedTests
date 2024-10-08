@@ -1,6 +1,6 @@
 ﻿namespace Tests.PlayMode
 {
-    public class MissionsTests
+    public class MissionsTests : PlayModeTests
     {
         
     }

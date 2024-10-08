@@ -75,11 +75,5 @@ namespace Tests.Utils
             return material;
         }
 
-        public static class TestableObjectFactory {
-            public static T Create<T>() {
-                return (T)FormatterServices.GetUninitializedObject(typeof(T));
-            }
-        }
-
     }
 }

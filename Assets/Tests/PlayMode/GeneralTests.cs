@@ -15,7 +15,7 @@ namespace Tests.PlayMode
         public IEnumerator LevelLoader_LoadLevel()
         {
             TestUtils.LogStartTestInformation(nameof(LevelLoader_LoadLevel));
-            var levelLoader = TestUtils.TestableObjectFactory.Create<LevelLoader>();
+            var levelLoader = TestableMonobehaviourFactory.Create<LevelLoader>();
             levelLoader.LoadLevel(TestStrings.MainSceneName);
             yield return AssertForSceneLoaded(TestStrings.MainSceneName);
         }
