@@ -25,9 +25,9 @@ namespace Tests.PlayMode
         {
             base.Setup();
             Debug.Log($"Setup {nameof(CharacterTests)}");
-            if (!File.Exists(TestStrings.MainScene))
+            if (!File.Exists(TestStrings.MainScenePath))
             {
-                Assert.Inconclusive($"The path to '{nameof(TestStrings.MainScene)}' is incorrect.");
+                Assert.Inconclusive($"The path to '{nameof(TestStrings.MainScenePath)}' is incorrect.");
             }
         }
 
@@ -100,8 +100,8 @@ namespace Tests.PlayMode
 
         protected IEnumerator MainGameSceneSetup()
         {
-            Debug.Log($"Loading scene: {TestStrings.MainScene}");
-            SceneManager.LoadScene(TestStrings.MainScene);
+            Debug.Log($"Loading scene: {TestStrings.MainScenePath}");
+            SceneManager.LoadScene(TestStrings.MainScenePath);
             yield return null;
             Debug.Log($"Setting Tutorial as done");
             PlayerData.instance.tutorialDone = true;

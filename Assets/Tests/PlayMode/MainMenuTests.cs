@@ -10,10 +10,10 @@ namespace Tests.PlayMode
 {
     public class MainMenuTests : MainSceneTests
     {
-        [UnityTest]
+        [UnityTest, Category(TestStrings.IntegrationCategoryName)]
         public IEnumerator PlayerSaveDataDeletionThroughUIMenus()
         {
-            Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(PlayerSaveDataDeletionThroughUIMenus)}");
+            TestUtils.LogStartTestInformation(nameof(PlayerSaveDataDeletionThroughUIMenus));
             yield return MainGameSceneSetup();
             yield return null;
             Assert.NotNull(PlayerData.instance);
@@ -34,16 +34,15 @@ namespace Tests.PlayMode
             Assert.AreNotSame(PlayerData.instance.tutorialDone, true);
         }
 
-        [Test]
+        [Test, Category(TestStrings.UnitCategoryName)]
         public void PlayerDataDeletionTest()
         {
-            Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(PlayerDataDeletionTest)}");
+            TestUtils.LogStartTestInformation(nameof(PlayerDataDeletionTest));
             PlayerData.Create();
             Assert.NotNull(PlayerData.instance);
             PlayerData.instance.coins += 100;
             PlayerData.NewSave();
             Assert.Zero(PlayerData.instance.coins);
         }
-
     }
 }

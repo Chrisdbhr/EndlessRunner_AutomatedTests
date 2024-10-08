@@ -12,7 +12,7 @@ namespace Tests.PlayMode
     public class ConsumableTests : MainSceneTests
     {
 
-        [UnityTest]
+        [UnityTest, Category(TestStrings.IntegrationCategoryName)]
         public IEnumerator TestCoinMagnet()
         {
             Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(TestCoinMagnet)}");
@@ -35,7 +35,7 @@ namespace Tests.PlayMode
             Assert.GreaterOrEqual(_trackManager.score, oldScore + 12);
         }
 
-        [UnityTest]
+        [UnityTest, Category(TestStrings.IntegrationCategoryName)]
         public IEnumerator TestExtraLife()
         {
             Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(TestExtraLife)}");
@@ -48,7 +48,7 @@ namespace Tests.PlayMode
             Assert.GreaterOrEqual(3, _trackManager.characterController.currentLife);
         }
 
-        [UnityTest]
+        [UnityTest, Category(TestStrings.IntegrationCategoryName)]
         public IEnumerator TestInvincibility()
         {
             Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(TestInvincibility)}");
@@ -70,7 +70,7 @@ namespace Tests.PlayMode
             Assert.AreEqual(initialLife,_trackManager.characterController.currentLife);
         }
 
-        [UnityTest]
+        [UnityTest, Category(TestStrings.IntegrationCategoryName)]
         public IEnumerator TestScore2Multiplier()
         {
             Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(TestScore2Multiplier)}");

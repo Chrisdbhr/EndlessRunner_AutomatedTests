@@ -17,10 +17,10 @@ namespace Tests.PlayMode
 
         #region Tests
 
-        [UnityTest, Order(0), Timeout(10 * 1000)]
+        [UnityTest, Order(0), Timeout(10 * 1000), Category(TestStrings.IntegrationCategoryName)]
         public IEnumerator LeftClicksDontGoOffScreen()
         {
-            Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(LeftClicksDontGoOffScreen)}");
+            TestUtils.LogStartTestInformation(nameof(LeftClicksDontGoOffScreen));
             yield return MainGameSceneSetup();
             yield return WaitUntilGameStarts();
             var positionXLimit = _trackManager.laneOffset * -1f;
@@ -42,10 +42,10 @@ namespace Tests.PlayMode
             Assert.GreaterOrEqual(characterController.characterCollider.transform.position.x, positionXLimit, "Character moved farter from the Left lane.");
         }
 
-        [UnityTest, Order(1)]
+        [UnityTest, Order(1), Category(TestStrings.IntegrationCategoryName)]
         public IEnumerator FishCollectionGivingPoints()
         {
-            Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(FishCollectionGivingPoints)}");
+            TestUtils.LogStartTestInformation(nameof(FishCollectionGivingPoints));
             yield return MainGameSceneSetup();
             yield return WaitUntilGameStarts();
             int safeSegmentOverride = 10;
@@ -58,10 +58,10 @@ namespace Tests.PlayMode
             Assert.Greater(_trackManager.score, initialScore);
         }
 
-        [UnityTest, Order(2)]
+        [UnityTest, Order(2), Category(TestStrings.IntegrationCategoryName)]
         public IEnumerator HitSomethingAndDie()
         {
-            Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(HitSomethingAndDie)}");
+            TestUtils.LogStartTestInformation(nameof(HitSomethingAndDie));
             yield return MainGameSceneSetup();
             yield return WaitUntilGameStarts();
             Assert.NotNull(_trackManager.characterController);
@@ -79,10 +79,10 @@ namespace Tests.PlayMode
             Assert.LessOrEqual(_trackManager.characterController.characterCollider.controller.currentLife, 0);
         }
 
-        [UnityTest,Order(3)]
+        [UnityTest,Order(3), Category(TestStrings.IntegrationCategoryName)]
         public IEnumerator ResetProcessWorkingAsExpected()
         {
-            Debug.Log($"{TestStrings.TestStartLogPrefix}{nameof(ResetProcessWorkingAsExpected)}");
+            TestUtils.LogStartTestInformation(nameof(ResetProcessWorkingAsExpected));
             yield return MainGameSceneSetup();
             yield return WaitUntilGameStarts();
             Assert.NotNull(_trackManager.characterController);
