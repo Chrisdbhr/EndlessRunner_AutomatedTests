@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Reflection;
 using System.Runtime.Serialization;
 using NUnit.Framework;
@@ -34,7 +35,10 @@ namespace Tests.Utils
             return field.GetRawConstantValue();
         }
 
-
+        public static void LogStartTestInformation(string methodName)
+        {
+            Debug.Log($"{TestStrings.TestStartLogPrefix}{methodName}");
+        }
 
         public static object ReflectionGetFieldValue(this object o, string fieldName)
         {
