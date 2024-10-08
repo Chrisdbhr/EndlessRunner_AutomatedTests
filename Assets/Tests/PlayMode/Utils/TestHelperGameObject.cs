@@ -19,9 +19,9 @@ namespace Tests.PlayMode.Utils
             CheckToResumeGame();
         }
 
-        public new void StartCoroutine(IEnumerator routine)
+        public new Coroutine StartCoroutine(IEnumerator routine)
         {
-            base.StartCoroutine(routine);
+            return base.StartCoroutine(routine);
         }
 
         void CheckToResumeGame()

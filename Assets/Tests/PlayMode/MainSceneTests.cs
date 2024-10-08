@@ -6,6 +6,7 @@ using Tests.Utils;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
+using UnityEngine.TestTools;
 
 namespace Tests.PlayMode
 {
@@ -98,7 +99,7 @@ namespace Tests.PlayMode
             }
         }
 
-        protected IEnumerator MainGameSceneSetup()
+        public static IEnumerator MainGameSceneSetup()
         {
             Debug.Log($"Loading scene: {TestStrings.MainScenePath}");
             SceneManager.LoadScene(TestStrings.MainScenePath);

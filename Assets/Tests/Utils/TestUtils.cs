@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
-using System.Runtime.Serialization;
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Tests.Utils
@@ -73,6 +72,10 @@ namespace Tests.Utils
             material.renderQueue = 3000;
             material.color = new Color(1f, 0f, 0f, .6f);
             return material;
+        }
+
+        public static IEnumerable<T> GetValues<T>() {
+            return Enum.GetValues(typeof(T)).Cast<T>();
         }
 
     }

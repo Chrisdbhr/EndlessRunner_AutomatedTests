@@ -44,5 +44,21 @@ namespace Tests.PlayMode
             PlayerData.NewSave();
             Assert.Zero(PlayerData.instance.coins);
         }
+
+        #region Game State
+
+        [UnityTest]
+        public IEnumerator QuitToLoadout()
+        {
+            TestUtils.LogStartTestInformation(nameof(QuitToLoadout));
+            yield return MainGameSceneSetup();
+            yield return WaitUntilGameStarts();
+            var gameState = Object.FindAnyObjectByType<GameState>(FindObjectsInactive.Include);
+            yield return null;
+            Assert.NotNull(gameState);
+            gameState.QuitToLoadout();
+        }
+
+        #endregion Game State
     }
 }
