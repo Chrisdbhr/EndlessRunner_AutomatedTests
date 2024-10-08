@@ -13,12 +13,14 @@ namespace Tests.PlayMode
         [SetUp]
         public virtual void Setup()
         {
+            Time.timeScale = 2f;
             TestHelperGameObject = new GameObject(nameof(TestHelperGameObject)).AddComponent<TestHelperGameObject>();
         }
 
         [TearDown]
         public virtual void TearDown()
         {
+            Time.timeScale = 1f;
             Object.Destroy(TestHelperGameObject);
         }
 
