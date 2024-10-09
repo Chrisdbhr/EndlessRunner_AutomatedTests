@@ -22,6 +22,7 @@ namespace Tests.PlayMode
             TestUtils.SimulateButtonClick(storeButton);
             yield return new WaitUntil(() => CharacterDatabase.loaded);
             yield return new WaitUntil(() => ThemeDatabase.loaded);
+            yield return null;
 
             var shopUI = Object.FindFirstObjectByType<ShopUI>();
             Assert.NotNull(shopUI);

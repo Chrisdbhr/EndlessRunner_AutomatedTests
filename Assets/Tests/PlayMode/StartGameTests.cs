@@ -23,6 +23,7 @@ namespace Tests.PlayMode
 
             var currentScene = SceneManager.GetActiveScene();
 
+            yield return null;
             TestUtils.SimulateButtonClick(buttonComp);
             yield return new WaitUntil(() => currentScene == SceneManager.GetActiveScene());
 
