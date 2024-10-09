@@ -1,13 +1,13 @@
 # Unity Automated Testing Project
 
+[Watch the showcase video on YouTube](https://www.youtube.com/watch?v=pFdLH5kJWdg)
+
 This project was created as part of a technical assessment to demonstrate automated playmode testing in Unity, using the [Endless Runner Sample Game](https://assetstore.unity.com/packages/templates/tutorials/endless-runner-sample-game-87901) as the foundation.
 
 **Code Coverage** is used to report current tests scenario.
 
 ![Test Coverage](./CodeCoverage/Report/badge_linecoverage.svg)
 
-[Watch the video on YouTube](https://www.youtube.com/watch?v=pFdLH5kJWdg)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pFdLH5kJWdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Tested Features
 
