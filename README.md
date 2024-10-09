@@ -6,6 +6,9 @@ This project was created as part of a technical assessment to demonstrate automa
 
 ![Test Coverage](./CodeCoverage/Report/badge_linecoverage.svg)
 
+[Watch the video on YouTube](https://www.youtube.com/watch?v=pFdLH5kJWdg)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pFdLH5kJWdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Tested Features
 
 ### Main required tests
