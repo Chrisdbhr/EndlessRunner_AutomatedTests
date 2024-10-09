@@ -10,8 +10,6 @@ namespace Tests.Utils
 {
     public static class TestUtils
     {
-        const string ErrorGettingFieldFromReflection = "Exception getting field with reflection: ";
-
         public static object ReflectionGetConstFieldValue(this Type type, string fieldName)
         {
             var field = type.GetField(fieldName, BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy);
