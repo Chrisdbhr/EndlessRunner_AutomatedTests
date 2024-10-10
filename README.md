@@ -6,7 +6,7 @@ This project was created as part of a technical assessment to demonstrate automa
 
 **Code Coverage** is used to report current tests scenario.
 
-![Test Coverage](./docs/CodeCoverage/Report/badge_linecoverage.svg)
+[![Test Coverage](./docs/CodeCoverage/Report/badge_linecoverage.svg)](https://chrisjogos.com/EndlessRunner_AutomatedTests/)
 
 
 ## Tested Features
