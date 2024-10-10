@@ -6,7 +6,7 @@ This project was created as part of a technical assessment to demonstrate automa
 
 **Code Coverage** is used to report current tests scenario.
 
-[![Test Coverage](./docs/CodeCoverage/Report/badge_linecoverage.svg)](https://chrisjogos.com/EndlessRunner_AutomatedTests/)
+[![Test Coverage](./docs/CodeCoverage/Report/badge_linecoverage.svg)](https://chrisjogos.com/EndlessRunner_AutomatedTests/CodeCoverage/Report)
 
 
 ## Tested Features
@@ -35,7 +35,7 @@ This project was created as part of a technical assessment to demonstrate automa
 ## Considerations and Future Improvements
 
 - **Input System:** The current implementation uses the old Unity input system. A potential improvement would be to upgrade to the Unity Input System for more robust and modern input handling.
-- **Code Coverage:** Current Code Coverage is over 60%, future implementation would consider 100% code coverage with test variations of current tested methods.
+- **Code Coverage:** [Current Code Coverage](https://chrisjogos.com/EndlessRunner_AutomatedTests/CodeCoverage/Report) is over 60%, future implementation would consider 100% code coverage with test variations of current tested methods.
 
 ## Prerequisites
 
