@@ -1,6 +1,6 @@
 # Unity Automated Testing Project
 
-[Watch the showcase video on YouTube](https://www.youtube.com/watch?v=pFdLH5kJWdg)
+[Watch the showcase video on YouTube](https://www.youtube.com/watch?v=Bcl44QiA1H8)
 
 This project was created as part of a technical assessment to demonstrate automated playmode testing in Unity, using the [Endless Runner Sample Game](https://assetstore.unity.com/packages/templates/tutorials/endless-runner-sample-game-87901) as the foundation.
 
